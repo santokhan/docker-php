@@ -1,14 +1,14 @@
 -- =========================
 -- USERS
 -- =========================
-INSERT INTO users (name, email, password, role, parent_id)
+INSERT IGNORE INTO users (name, email, password, role, parent_id)
 VALUES 
 ('Admin Parent', 'admin@example.com', 'hashed_password', 'parent', NULL);
 
 -- Get parent id safely
 SET @parent_id = LAST_INSERT_ID();
 
-INSERT INTO users (name, email, password, role, parent_id)
+INSERT IGNORE INTO users (name, email, password, role, parent_id)
 VALUES 
 ('User One', 'user1@example.com', 'hashed_password', 'user', @parent_id),
 ('User Two', 'user2@example.com', 'hashed_password', 'user', @parent_id);
