@@ -25,6 +25,7 @@ if (!isset($pageTitle)) {
         <nav class="space-x-4">
             <a href="/" class="hover:text-blue-400">Home</a>
             <a href="/blogs/new" class="hover:text-blue-400">Create Blog</a>
+            <a href="/signin" class="hover:text-blue-400">Signin</a>
         </nav>
 
     </div>

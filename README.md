@@ -17,8 +17,32 @@ It is designed for quick local development or simple deployment.
 project-root/
 │
 ├── docker-compose.yml
-└── www/
-    └── index.php
+├── Dockerfile.yml
+│
+├── db/
+│   ├── init.sql
+│   ├── schema.sql
+│   └── seed.sql
+│
+├── tailwind/
+│   └── input.css
+│
+├── www/
+│   ├── api
+│   │   └── v1
+│   │       └── upload-image.php
+│   ├── app
+│   ├── assets
+│   │   └── css
+│   │       └── output.css
+│   ├── layouts
+│   └── index.php
+│
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── tailwind.config.js
+└── README.md
 ```
 
 * `www/` → Your PHP application files

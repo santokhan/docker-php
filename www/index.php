@@ -1,7 +1,15 @@
 <?php
+require_once "db.php";
 
 $pageTitle = "Home";
-require_once "db.php";
+
+require_once 'app/helpers/functions.php';
+require_once 'app/Router.php';
+$router = new Router();
+
+$router->get('/blogs/:slug', function ($slug) {
+    include "blogs/slug.php";
+});
 
 include "layouts/header.php";
 
@@ -35,11 +43,10 @@ $result = $conn->query($sql);
 
                 <!-- Image (optional) -->
                 <?php if (!empty($row['image']) && file_exists("uploads/" . $row['image'])): ?>
-                    <img 
+                    <img
                         src="/uploads/<?= htmlspecialchars($row['image']) ?>"
                         class="w-full h-48 object-cover rounded mb-4"
-                        alt="Blog Image"
-                    >
+                        alt="Blog Image">
                 <?php endif; ?>
 
                 <!-- Title -->
@@ -58,10 +65,9 @@ $result = $conn->query($sql);
                 </p>
 
                 <!-- Read more -->
-                <a 
-                    href="/blog.php?slug=<?= $row['slug'] ?>"
-                    class="inline-block mt-4 text-blue-600 hover:underline"
-                >
+                <a
+                    href="/blogs/<?= generateSlug($row['slug']) ?>"
+                    class="inline-block mt-4 text-blue-600 hover:underline">
                     Read More →
                 </a>
 
