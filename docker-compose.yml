@@ -1,6 +1,7 @@
 services:
   web:
-    image: php:8.2-apache
+    # image: php:8.2-apache
+    build: .
     ports:
       - "8080:80"
     volumes:
@@ -11,3 +12,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: app
+    # Move all db files inside docker
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
