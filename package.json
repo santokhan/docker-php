@@ -1,0 +1,27 @@
+{
+  "name": "telegram",
+  "version": "1.0.0",
+  "description": "This setup runs a basic web application using:",
+  "homepage": "https://github.com/santokhan/docker-php#readme",
+  "bugs": {
+    "url": "https://github.com/santokhan/docker-php/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/santokhan/docker-php.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tailwindcss -i ./tailwind/input.css -o ./www/assets/css/output.css --watch",
+    "build": "tailwindcss -i ./tailwind/input.css -o ./www/assets/css/output.css --minify"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.12",
+    "tailwindcss": "^3.4.17"
+  }
+}
